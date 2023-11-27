@@ -13,7 +13,7 @@
      <!-- Enlace a interface CSS-->
     <link  type="text/css" rel="stylesheet" href="Interface.css">
 </head>
-<body>
+<body> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-brand" >Welcome Supervisor.</div>
@@ -35,62 +35,77 @@
       <div class = "container-main">
         <h2 class="manage-supervisors." style="margin-top: 30px;">Employee monitoring.</h2>
         <!--Contenedor con las 3 cards (1)-->
-        <div class="container">
-          <!-- Content here -->
-          <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-spell-check" style="font-size: 24px;"></i>
-            <div class="card-body">
-              <h5 class="card-title">Sort employees by name</h5>
-              <p class="card-text">Access the list of your employees in charge to sort employees by name.</p>
-              <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-user-plus" style="font-size: 22px;"></i>
-            <div class="card-body">
-              <h5 class="card-title">Add employee</h5>
-              <p class="card-text">Access a form to add a new employee to the database.</p>
-              <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-user-minus" style="font-size: 22px;"></i>
-            <div class="card-body">
-              <h5 class="card-title">Delete employee</h5>
-              <p class="card-text">Accesses the list of employees for which he/she is responsible and deletes a employee by name and title.</p>
-              <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-         <!--Contenedor con las 3 cards (2)-->
-        <div class="container">
+        <style>
+          .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+          }
+          .card {
+            margin-right: 10px;
+          }
+    
+        </style>
+        <div class = "container_Mayor"></div>
+          <div class="container">
             <!-- Content here -->
             <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-user-gear" style="font-size: 25px;"></i>
+              <i class="fa-solid fa-spell-check" style="font-size: 24px;"></i>
               <div class="card-body">
-                <h5 class="card-title">Edit employee profile</h5>
-                <p class="card-text">Enter the employee's name and access his/her profile. 
-                    Subsequently, complete the form to edit the employee's information.</p>
+                <h5 class="card-title">Sort employees by name</h5>
+                <p class="card-text">Access the list of your employees in charge to sort employees by name.</p>
                 <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-money-bill-1-wave" style="font-size: 24px;"></i>
+              <i class="fa-solid fa-user-plus" style="font-size: 22px;"></i>
               <div class="card-body">
-                <h5 class="card-title">Sort employees by salary</h5>
-                <p class="card-text">Access the list of your employees in charge to sort employees by salary.</p>
+                <h5 class="card-title">Add employee</h5>
+                <p class="card-text">Access a form to add a new employee to the database.</p>
                 <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="card" style="width: 18rem;">
-            <i class="fa-solid fa-chart-simple" style="font-size: 22px;"></i>
+              <i class="fa-solid fa-user-minus" style="font-size: 22px;"></i>
               <div class="card-body">
-                <h5 class="card-title">Sort employees by highest number of sales</h5>
-                <p class="card-text">Access a table in which your employees are organized according to the highest number of sales.</p>
+                <h5 class="card-title">Delete employee</h5>
+                <p class="card-text">Accesses the list of employees for which he/she is responsible and deletes a employee by name and title.</p>
                 <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
+          <br>
+          <!--Contenedor con las 3 cards (2)-->
+          <div class="container">
+              <!-- Content here -->
+              <div class="card" style="width: 18rem;">
+              <i class="fa-solid fa-user-gear" style="font-size: 25px;"></i>
+                <div class="card-body">
+                  <h5 class="card-title">Edit employee profile</h5>
+                  <p class="card-text">Enter the employee's name and access his/her profile. 
+                      Subsequently, complete the form to edit the employee's information.</p>
+                  <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+              <i class="fa-solid fa-money-bill-1-wave" style="font-size: 24px;"></i>
+                <div class="card-body">
+                  <h5 class="card-title">Sort employees by salary</h5>
+                  <p class="card-text">Access the list of your employees in charge to sort employees by salary.</p>
+                  <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+              <i class="fa-solid fa-chart-simple" style="font-size: 22px;"></i>
+                <div class="card-body">
+                  <h5 class="card-title">Sort employees by highest number of sales</h5>
+                  <p class="card-text">Access a table in which your employees are organized according to the highest number of sales.</p>
+                  <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
     </div>
 </body>
 </html>
