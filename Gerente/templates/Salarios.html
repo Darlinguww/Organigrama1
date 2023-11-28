@@ -15,6 +15,9 @@
      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <!-- Enlace a Interface_Gerente.CSS -->
      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='Interface_Gerente.css') }}">
+
+     <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
        
         <style>
             /* Estilo para la tabla de salarios */
@@ -38,32 +41,37 @@
         </style>
     </head>
     <body>
+
+
         <div class="title-bar">
             <h2>Salaries Dashboard</h2>
         </div>
-
         <table class="table">
             <thead>
                 <tr>
+                    <th>Action</th>
                     <th>Name</th>
                     <th>Salary</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                {% for supervisor in supervisors %}
                 <tr>
-                    <td>{{ supervisor.name }}</td>
-                    <td>{{ supervisor.salary }}</td>
-                    <td>
-                        <form action="{{ url_for('update_salary') }}" method="post">
-                            <input type="hidden" name="name" value="{{ supervisor.name }}">
-                            <input type="number" name="new_salary" placeholder="New Salary" required>
-                            <button type="submit" class="btn-submit">Update</button>
-                        </form>
-                    </td>
+                    <td><input type="button" value="Save"></td>
+                    <td>Jose</td>
+                    <td>8000000</td>
+                    <label for ="action">Enter New Salary:</label>
+                    <input type="text" id="action" action="action" required minlength="4" maxlength="16" size="10" />
                 </tr>
-                {% endfor %}
+                <tr>
+                    <td><input type="button" value="Save"></td>
+                    <td>Andres</td>
+                    <td>7000000</td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Save"></td>
+                    <td>Darlen</td>
+                    <td>7000000</td>
+                </tr>
             </tbody>
         </table>
     </body>
