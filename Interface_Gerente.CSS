@@ -1,30 +1,114 @@
-.navbar-brand{
+/* Agrega el siguiente estilo al final del archivo */
+
+/* Estilo para la barra de navegación */
+.navbar-brand {
     font-size: 25px;
     font-weight: bold;
 }
 
-#navbarText{
+#navbarText {
     justify-content: space-between;
 }
 
-.container{
-    margin: 30px;
-    padding-block: 20px;
-    border: 1px solid #ccc;
+/* Estilo para el contenedor principal de la página del gerente */
+.container-main {
+    margin: 40px;
+    padding-block: 30px;
+    border: 2px solid #ccc;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
-.manage-supervisors{
-    font-size: 20px;
+/* Estilo para el título "Manage supervisors" */
+.manage-supervisors {
+    font-size: 30px;
     font-weight: bold;
-    margin-left: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
-.container-main{
-    display: grid;
-    place-items: center;
+/* Estilo para las tarjetas de gestión de supervisores */
+.container {
+    display: flex;
+    justify-content: space-around;
 }
 
+.card {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 18rem;
+    text-align: center;
+}
+
+.card i {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+/* Estilo para los botones en las tarjetas */
+.card .btn-primary {
+    background-color: #0d5e66;
+    border-color: #0d5e66;
+    margin-top: 10px;
+}
+
+.card .btn-primary i {
+    margin-left: 5px;
+}
+
+.card i {
+    font-size: 4rem;
+    margin-bottom: 5px;
+    border: 2px solid #0d5e66; /* Añade borde al icono */
+    border-radius: 8px; /* Borde redondeado */
+    padding: 5px; /* Espaciado interior para el borde */
+    margin-top: 5px; /* Ajusta la posición hacia abajo */
+}
+
+/* Ajuste de la posición de los iconos */
+.card i.fa-coins {
+    margin-top: 30px;
+}
+
+.card i.fa-user-plus {
+    margin-top: 25px;
+}
+
+.card i.fa-user-minus {
+    margin-top: 20px;
+}
+
+/* Estilo para los botones en las tarjetas */
+.card .btn-primary {
+    background-color: #0d5e66;
+    border-color: #0d5e66;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.card .btn-primary i {
+    margin-left: 5px;
+}
+
+.card .btn-primary i {
+    font-size: 1.5rem; /* Ajusta el tamaño de la flecha */
+}
+
+/* Ajuste del espacio en las tarjetas */
+.card {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 18rem;
+    text-align: center;
+    padding: 15px; /* Ajusta el espacio interior de la tarjeta */
+}
