@@ -7,8 +7,7 @@ app = Flask(__name__)
 def create_table():
     try:
         # Conectar a la base de datos
-        con = sql.connect("Salarios.db")
-
+        con = sql.connect("Gerente/Salarios.db")
         
         # Crear un objeto cursor para ejecutar consultas
         cursor = con.cursor()
@@ -33,7 +32,7 @@ create_table()
 def update_database(supervisor_name, new_salary):
     try:
         # Conectar a la base de datos
-        con = sql.connect("Salarios.db")
+        con = sql.connect("Gerente/Salarios.db")
 
         # Crear un objeto cursor para ejecutar consultas
         cursor = con.cursor()
@@ -53,7 +52,7 @@ def update_database(supervisor_name, new_salary):
 def add_supervisor(name, salary):
     try:
         # Conectar a la base de datos
-        con = sql.connect("Salarios.db")
+        con = sql.connect("Gerente/Salarios.db")
 
         # Crear un objeto cursor para ejecutar consultas
         cursor = con.cursor()
@@ -73,7 +72,7 @@ def add_supervisor(name, salary):
 def delete_supervisor(name):
     try:
         # Conectar a la base de datos
-        con = sql.connect("Salarios.db")
+        con = sql.connect("Gerente/Salarios.db")
 
         # Crear un objeto cursor para ejecutar consultas
         cursor = con.cursor()
@@ -94,7 +93,7 @@ def delete_supervisor(name):
 def index():
     try:
         # Conectar a la base de datos
-        con = sql.connect("Salarios.db")
+        con = sql.connect("Gerente/Salarios.db")
 
         # Crear un objeto cursor para ejecutar consultas
         cursor = con.cursor()
@@ -106,9 +105,7 @@ def index():
         # Cerrar la conexión
         con.close()
 
-        return render_template('Salarios.html', supervisors=supervisors_data)
-
-
+        return render_template('index_Gerente.html', supervisors=supervisors_data)
 
     except sql.Error as e:
         print("Error en la base de datos:", e)
@@ -124,7 +121,9 @@ def update_salary():
     # Llamada a la función para actualizar la base de datos
     update_database(supervisor_name, new_salary)
 
+    # Redireccionar a la página principal después de la actualización
     return redirect(url_for('index'))
+
 
 # Ruta para agregar un supervisor
 @app.route('/add_supervisor', methods=['POST'])
@@ -135,7 +134,9 @@ def add_supervisor_route():
     # Llamada a la función para agregar un supervisor a la base de datos
     add_supervisor(name, salary)
 
+    # Redireccionar a la página principal después de agregar el supervisor
     return redirect(url_for('index'))
+
 
 # Ruta para eliminar un supervisor
 @app.route('/delete_supervisor', methods=['POST'])
@@ -145,8 +146,48 @@ def delete_supervisor_route():
     # Llamada a la función para eliminar un supervisor de la base de datos
     delete_supervisor(supervisor_name)
 
+    # Redireccionar a la página principal después de eliminar el supervisor
     return redirect(url_for('index'))
+
+
+
+# Ruta para la página de salarios
+@app.route('/salarios')
+def salarios():
+    try:
+        # Conectar a la base de datos
+        con = sql.connect("Gerente/Salarios.db")
+
+        # Crear un objeto cursor para ejecutar consultas
+        cursor = con.cursor()
+
+        # Obtener los datos de los supervisores
+        cursor.execute("SELECT Name, Salary FROM usuarios")
+        supervisors_data = cursor.fetchall()
+
+        # Imprime los datos en la consola para verificar
+        print("Supervisors Data:", supervisors_data)
+
+        # Cerrar la conexión
+        con.close()
+
+        return render_template('Salarios.html', supervisors=supervisors_data)
+
+    except sql.Error as e:
+        print("Error en la base de datos:", e)
+        return "Error en la base de datos"
+
+
+
+@app.route('/add_super')
+def add_super():
+    return render_template('Add_Super.html')
+
+@app.route('/delete_super')
+def delete_super():
+    return render_template('Delete_Super.html')
 
 # Iniciar la aplicación Flask
 if __name__ == '__main__':
     app.run(debug=True)
+

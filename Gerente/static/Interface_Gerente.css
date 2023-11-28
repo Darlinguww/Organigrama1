@@ -158,3 +158,30 @@ th {
     color: white; /* Texto en blanco */
     border: 1px solid #ddd; /* Borde para la primera fila */
 }
+/* Estilo adicional específico para Delete_Super.html */
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #0d5e66;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #0d5e66;
+    color: white;
+    cursor: pointer;
+}
